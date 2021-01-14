@@ -29,11 +29,10 @@ This project includes:
   ph-jaxb under Apache 2
   ph-jaxb-pom under Apache 2
   ph-schematron-api under Apache 2
-  ph-schematron-schxslt under Apache 2
   ph-schematron-validator under Apache 2
+  ph-schematron-xslt under Apache 2
   ph-xml under Apache 2
   ph-xsds-xml under Apache 2
   Saxon-HE under Mozilla Public License Version 2.0
-  SchXslt Core under MIT License
   SLF4J API Module under MIT License
 

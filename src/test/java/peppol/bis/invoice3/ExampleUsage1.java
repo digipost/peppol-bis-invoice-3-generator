@@ -61,8 +61,7 @@ import peppol.bis.invoice3.domain.TaxableAmount;
 
 public class ExampleUsage1 {
 
-    @Test
-    void caseStudy1_NO() {
+    public static Invoice createCaseStudy1(){
 
         final AccountingSupplierParty accountingSupplierParty = new AccountingSupplierParty(
             new Party(
@@ -153,6 +152,11 @@ public class ExampleUsage1 {
             .withPaymentMeans(paymentMeans1)
             .withPaymentMeans(paymentMeans2);
 
-        InvoiceApi.from(invoice).process().log();
+        return invoice;
+    }
+
+    @Test
+    void caseStudy1_NO() {
+        InvoiceApi.from(createCaseStudy1()).process().log();
     }
 }

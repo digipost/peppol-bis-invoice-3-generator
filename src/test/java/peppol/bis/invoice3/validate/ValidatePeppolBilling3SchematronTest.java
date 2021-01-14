@@ -17,7 +17,7 @@ package peppol.bis.invoice3.validate;
 
 import com.helger.commons.io.resource.ClassPathResource;
 import com.helger.commons.state.EValidity;
-import com.helger.schematron.schxslt.xslt2.SchematronResourceSchXslt_XSLT2;
+import com.helger.schematron.sch.SchematronResourceSCH;
 import com.helger.schematron.validator.SchematronValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -45,7 +45,7 @@ public class ValidatePeppolBilling3SchematronTest {
 
     @Test
     void read_and_compile_schematron_PeppolBIS_billing3_with_XsltJava() throws Exception {
-        final SchematronResourceSchXslt_XSLT2 res = SchematronResourceSchXslt_XSLT2.fromFile(schemaResource.getAsFile());
+        final SchematronResourceSCH res = SchematronResourceSCH.fromFile(schemaResource.getAsFile());
 
         assertTrue(res.isValidSchematron());
 
