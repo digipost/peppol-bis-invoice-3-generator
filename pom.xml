@@ -47,7 +47,34 @@
             <artifactId>eaxy</artifactId>
             <version>0.2.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.helger.schematron</groupId>
+            <artifactId>ph-schematron-schxslt</artifactId>
+            <version>6.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.helger</groupId>
+            <artifactId>ph-commons</artifactId>
+            <version>9.5.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.helger</groupId>
+            <artifactId>ph-xml</artifactId>
+            <version>9.5.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.helger.schematron</groupId>
+            <artifactId>ph-schematron-validator</artifactId>
+            <version>6.0.2</version>
+        </dependency>
 
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+            <scope>runtime</scope>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
@@ -187,9 +214,11 @@
                         <exclude>LICENCE*</exclude>
                         <exclude>NOTICE</exclude>
                         <exclude>.github/**/*.yml</exclude>
+                        <exclude>peppol-bis-invoice-3/**/*</exclude>
                         <exclude>**/*.html</exclude>
                         <exclude>**/*.xml</exclude>
                         <exclude>**/*.log</exclude>
+                        <exclude>**/*.sch</exclude>
                         <exclude>**/*.txt</exclude>
                         <exclude>**/*.pem</exclude>
                         <exclude>**/*.cer</exclude>

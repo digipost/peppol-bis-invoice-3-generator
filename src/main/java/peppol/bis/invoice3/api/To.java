@@ -16,6 +16,15 @@
 package peppol.bis.invoice3.api;
 
 import org.eaxy.Element;
+import org.w3c.dom.Document;
+
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.StringWriter;
 
 public class To {
     private final Element xml;
@@ -27,6 +36,31 @@ public class To {
     public To log() {
         System.out.println(xml.toIndentedXML());
         return this;
+    }
+
+    public To validate() {
+
+        return this;
+    }
+
+    public String getStringFromDocument(Document doc)
+    {
+        try
+        {
+            DOMSource domSource = new DOMSource(doc);
+            StringWriter writer = new StringWriter();
+            StreamResult result = new StreamResult(writer);
+            TransformerFactory tf = TransformerFactory.newInstance();
+            Transformer transformer = tf.newTransformer();
+            transformer.transform(domSource, result);
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            return writer.toString();
+        }
+        catch(TransformerException ex)
+        {
+            ex.printStackTrace();
+            return null;
+        }
     }
 
     public Element xml() {
